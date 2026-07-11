@@ -36,5 +36,3 @@ python -m unittest discover tests/
 ## License
 
 MIT License - see LICENSE file for details
-# glslib
-# glslib
