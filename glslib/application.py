@@ -11,7 +11,7 @@ class Application:
         pass
 
     def _arg_parse(self, parser):
-        parser.add_argument("--config_json", action="append", default=["config.json5"], help="Path to the configuration JSON file")
+        parser.add_argument("--config_json", action="append", default=[], help="Path to the configuration JSON file")
         parser.add_argument("--config", action="append", help="config parameters in the form of key=value that will override the config JSON file")
         parser.add_argument("--debug", action="store_true", help="Enable debug mode")
         return parser
