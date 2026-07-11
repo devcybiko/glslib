@@ -2,13 +2,13 @@ import argparse
 
 class Application:
     def __init__(self, description):
+        super().__init__()  # Continue MRO chain first
         from .glogger import GLogger
         self._arg_parser = argparse.ArgumentParser(description=description)
         self._arg_parse(self._arg_parser)
         self.args = self._arg_parser.parse_args()
         self.logger = GLogger(self.__class__.__name__)
         self.config = self._config_load()
-        pass
 
     def _arg_parse(self, parser):
         parser.add_argument("--config_json", action="append", default=[], help="Path to the configuration JSON file")
