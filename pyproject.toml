@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glslib"
+version = "0.1.0"
+description = "A Python package for graphics and simulation utilities"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "munch>=2.5.0",
+    "json5>=0.9.0",
+]
+license = {text = "MIT"}
+authors = [
+    {name = "Greg", email = "your-email@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/glslib"
