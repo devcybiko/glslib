@@ -32,5 +32,5 @@ class Application:
                 config[key] = value
         return config
 
-    def app_run(self):
+    def go(self):
         print("Running the application...")
