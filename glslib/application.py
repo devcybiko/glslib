@@ -1,4 +1,5 @@
 import argparse
+from munch import DefaultMunch
 
 class Application:
     def __init__(self, description):
@@ -16,7 +17,7 @@ class Application:
         parser.add_argument("--debug", action="store_true", help="Enable debug mode")
         return parser
 
-    def _config_load(self):
+    def _config_load(self) -> DefaultMunch:
         from .gjson import GJSON
         """
         Load configuration from JSON files. If multiple files are provided, they will be merged with later files overriding earlier ones.
@@ -30,7 +31,7 @@ class Application:
             for config_item in self.args.config:
                 key, value = config_item.split("=")
                 config[key] = value
-        return config
+        return DefaultMunch.fromDict(config)
 
     def go(self):
         print("Running the application...")
