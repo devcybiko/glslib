@@ -26,7 +26,8 @@ class Application:
         if not (hasattr(self.args, 'config_json') and self.args.config_json):
             return config
         for path in self.args.config_json:
-            config.update(GJSON.load(path))
+            json = GJSON.load(path)
+            config.update(DefaultMunch.fromDict(json))
         if self.args.config:
             for config_item in self.args.config:
                 key, value = config_item.split("=")
