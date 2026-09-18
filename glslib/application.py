@@ -22,7 +22,7 @@ class Application:
         """
         Load configuration from JSON files. If multiple files are provided, they will be merged with later files overriding earlier ones.
         """
-        config = {}
+        config = DefaultMunch()
         if not (hasattr(self.args, 'config_json') and self.args.config_json):
             return config
         for path in self.args.config_json:
@@ -31,7 +31,7 @@ class Application:
             for config_item in self.args.config:
                 key, value = config_item.split("=")
                 config[key] = value
-        return DefaultMunch.fromDict(config)
+        return config
 
     def go(self):
         print("Running the application...")
